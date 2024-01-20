@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta  charset="Utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <link rel="stylesheet" href="codecss.css"> 
+        <title> RESUME GENERATOR</title>
+
+    </head>
+    <body>
+        <!--it is a form that takes our information-->
+        <div class="container" id="cv-form">
+            <h1 class="text-center my-2 "style="background-color: rgb(229, 240, 240);">RESUME GENERATOR</h1>
+            <p class="text-center" style="background-color: rgb(201, 238, 238);">BY AKHIL GOPISHETTI</p>  
+            <div class="row">
+                <div class="col-md-6">  <!--left column-->
+                    <h3 class="text-danger">personal information</h3>
+                    <!--Name-->
+                    <div class="form-group ">
+                        <label for="nameField">Your Name</label>
+                        <input type="text" id="nameField" placeholder="Enter Your Name" class="form-control">
+                    </div>
+                    <!--contact-->
+                    <div class="form-group mt-2">
+                        <label for="contactField">Your Contact</label>
+                        <input type="text" id="contactField" placeholder="Enter Your contact" class="form-control">
+                    </div>
+                    <!--email-->
+                    <div class="form-group mt-2">
+                        <label for="emailField">Your mail</label>
+                        <input type="text" id="emailField" placeholder="xyz@gmail.com" class="form-control">
+                    </div>
+                    
+                    <!--address-->
+                    <div class="form-group mt-2">
+                        <label for="addressField">Your Address</label>
+                        <textarea type="text" id="addressField" placeholder="Enter Your Address" class="form-control"></textarea>
+                    </div>
+
+                    <div class="form-group mt-4">
+                        <label for="imageField">Select image file</label>
+                        <input id="imgField" type="file" class="form-control">
+                    </div>
+                    <!--Important Links-->
+                    <h4 class="text-danger my-3">Important Links</h4>
+                    <!--facebook-->
+                    <div class="form-group mt-2">
+                        <label for="fbField">Facebook</label>
+                        <input type="text" id="fbField" placeholder="Enter Here" class="form-control">
+                    </div>
+                     <!--GitHub-->
+                    <div class="form-group mt-2">
+                        <label for="gitField">GitHub</label>
+                        <input type="text" id="gitField" placeholder="Enter Here" class="form-control">
+                    </div>
+                     <!--LinkedIn-->
+                    <div class="form-group mt-2">
+                        <label for="linkedField">LinkedIn</label>
+                        <input type="text" id="linkedField" placeholder="Enter Here" class="form-control">
+                    </div>
+                     <!--skills-->
+                    <h4 class="text-danger my-3">skills</h4>
+                    <div class="form-group mt-2">
+                        <textarea type="text" id="skillField" placeholder="skills separated by '," class="form-control"></textarea>
+                    </div>
+                    
+                </div>
+                <!--right column-->
+
+                <div class="col-md-6">  <!--right column-->
+                    <h3 class="text-danger">Proffessional Details</h3>
+                    <div class="form-group mt-2">
+                        <label for="">Objective</label>
+                        <textarea type="text" id="objectiveField" placeholder="Enter Here" class="form-control"></textarea>
+                    </div>
+                    <!--work Experience-->
+                    <div class="form-group mt-2 we">
+                        <label for="">Work Experience</label>
+                        <textarea  
+                        rows="3"
+                         placeholder="Enter cHere" 
+                        class="form-control weField mt-1"></textarea>
+
+                        
+                          <!--add button-->
+                        <div class="container text-center mt-1 weAddButton">
+                           <button onclick="addWEField()" class="btn btn-primary btn-sm">Add</button>
+                        </div>
+                    </div>
+
+                    <!--Academic Qualifications-->
+
+                    <div class="form-group mt-2 aq">
+                        <label for="">Acadamic Qualification</label>
+                        <textarea 
+                          rows="3"
+                          placeholder="Enter Your Academic Qualifications Here" 
+                          class="form-control aqField mt-1">
+                        </textarea>
+                          <!--add button-->
+                        <div class="container text-center mt-1 aqAddButton">
+                           <button onclick="addAQField()" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+
+                    <!--projects-->
+
+                    <div class="form-group mt-2 pj">
+                        <label for="">projects</label>
+                        <input type="text" 
+                         placeholder="Enter Here" 
+                         class="form-control pjField">
+                          <!--add button-->
+                        <div class="container text-center mt-1 pjAddButton">
+                           <button onclick="addNewPJField()" class="btn btn-primary">Add</button>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div> 
+            <div class="container text-center">
+                <button onclick="generateCV()" class="btn btn-primary btn-md mt-3">Generate Resume/CV</button>
+            </div>
+        </div>
+
+        <!--it is our template -->
+
+        <div class="container" id="cv-template">
+            <div class="row">
+                <!--left column-->
+                <div class="col-md-4  text-center py-5 backgroundcolour">
+                    <img src="C:\Users\AKHIL GOPISHETTI\profile image.png" alt="profile pic" class="img-fluid myimg" id="imgTemplate"/>
+
+                    <div class="container text-center">
+                        <p id="nameT1">abcd</p>
+                        <p id="contactT">+919478340967,+918956308567</p>
+                        <p id="emailT">xyz@gmail.com</p>
+                        <p id="addressT">gp colony,Karimnagar,505001</p>
+                        
+
+                        <hr/>
+                        <p><a id="fbT" href="#1">https://www.facebook.com/gopishettiakhil</a></p>
+                        <p><a id="gitT" href="#2">https://www.Github.com/gopishettiakhil</a></p>
+                        <p><a id="linkedT" href="#3">https://www.linkedin.com/gopishettiakhil</a></p>
+
+                        <hr/>
+                        <div class="">
+                            <h5>Skills</h5>
+                            <p id="skillT">ab,abc,xy,xyz,pq,pqr</p>
+                        </div>
+                        
+                    </div>
+                    
+
+                </div>
+
+                <!--right column-->
+
+                <div class="col-md-8">
+                    <h1 id="nameT2" class="text-center" style="font-weight:980;">abcd</h1>
+                    <!--objective card-->
+                    <div class="card">
+                        <div class="card-header backgroundcolour">
+                            <h3>Objective</h3>
+                        </div>
+                        <div class="card-body">
+                            <p id="objectiveT">I am abcd completed my Engineering from so and so college looking for a position in
+                                a company where i can utilize my skills for the growth of the company.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!--work Experince-->
+
+                    <div class="card">
+                        <div class="card-header backgroundcolour">
+                            <h3>Work Experience</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="weT">
+                              <li>worked in abc company as a Fronted Developer Intern (dd/yyyy - dd/yyyy)</li>
+                              <li>worked in xyz company as a Backend Developer (dd/yyyy - dd/yyyy)</li>
+                              <li>worked in pqr company as a full-Stack Developer (dd/yyyy - dd/yyyy)</li> 
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!--Acadamic Qualifications-->
+
+                    <div class="card">
+                        <div class="card-header backgroundcolour">
+                            <h3>Acadamic Qualifications</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="aqT">
+                              <li>Degree in abc college (dd/yyyy - dd/yyyy)</li>
+                              <li>Intermediate in xyz college(dd/yyyy - dd/yyyy)</li>
+                              <li>secondary schooling in pqr (dd/yyyy - dd/yyyy)</li> 
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <!--projects-->
+
+                    <div class="card">
+                        <div class="card-header backgroundcolour">
+                            <h3>Projects</h3>
+                        </div>
+                        <div class="card-body">
+                            <ul id="pjT">
+                              <li>abcdef project</li>
+                              <li>pqrs project</li>
+                              <li>xyz project</li> 
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="container mt-3 text-center">
+                        <button onclick="printCV()" btn backgroundcolour">print resume</button>
+
+                    </div>
+
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+        <script src="codescript.js"></script>
+    </body>
+
+</html>
