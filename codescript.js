@@ -54,7 +54,7 @@ function generateCV(){
    document.getElementById("objectiveT").innerHTML=document.getElementById("objectiveField").value;
    let imgField = document.getElementById("imgField").files[0];
 
-   updateProfilePicture(imgField);
+  
 
    //work experience
    let wes=document.getElementsByClassName("weField");
@@ -80,6 +80,8 @@ function generateCV(){
       str2=str2 + `<li>${e.value}</li>`;
    }
    document.getElementById("pjT").innerHTML = str2;
+  updateProfilePicture(imgField);
+ 
 
   // document.getElementById("cv-form").style.display ='none';
   // document.getElementById("cv-template").style.display ='block';
